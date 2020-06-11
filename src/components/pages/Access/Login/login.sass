@@ -1,0 +1,117 @@
+@mixin for-tablet
+    @media ( max-width: 1024px )
+        @content
+
+@mixin for-phone
+    @media ( max-width: 768px )
+        @content
+    
+    
+.main-login
+    height: 100vh
+    display: flex
+    background: url("/images/access-wallpaper.jpg")
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+    justify-content: space-around
+    align-items: center
+    flex-direction: column
+    font-family: sans-serif
+    z-index: 9
+
+    .form-container
+        background-color: white
+        border: 1px solid #29b6f6
+        border-radius: 10px
+        margin: auto
+        padding: 20px
+        text-align: center
+        overflow: hidden
+
+    // Animated input
+
+    .form-container
+        position: relative
+        width: 400px
+        height: 50%
+
+        @include for-phone
+            // background-color: red
+            width: 100%
+
+            overflow: hidden
+
+        .form-header
+            width: 100%
+
+        input
+            // The input size and the .form size are the same
+            width: 100%
+            height: 20%
+
+            border: none
+            color: #595f6e
+            outline: none
+            padding-top: 10px
+            margin-top: 4vh
+
+            &:focus + .label-name .content-name,
+            &:valid + .label-name .content-name 
+                color: #5fa8d3
+                font-size: 14px
+                transform: translateY(-70%)
+
+            &:focus + .label-name:after,
+            &:valid + .label-name:after
+                transform: translateX(0%)
+
+            &:focus + .label-name,
+            &:valid + .label-name,
+                border: 0px solid black
+
+        .label-name
+            position: absolute
+            // width: 100%
+            height: 16%
+
+            border-bottom: 0.5px solid black
+            left: 20px
+            right: 20px
+            pointer-events: none
+            z-index: 2
+            overflow: hidden
+            margin-top: 4vh
+
+            &:after 
+                position: absolute
+                width: 100%
+                height: 100%
+
+                border-bottom: 2px solid #5fa8d3
+                bottom: -1px
+                content: ""
+                left: 0px
+                transform: translateX(-100%)
+                transition: transform 0.3s ease
+
+
+            .content-name 
+                position: absolute
+                bottom: 5px
+                left: 0px
+
+                transition: all 0.3s ease
+        .form-footer 
+            position: absolute
+            bottom: 0
+            width: 100%
+
+            .form-primary-button
+                background: transparent
+                // box-shadow: inset 0px 0px 0px 0px
+                border: 1px solid #29b6f6
+                // width: 100px
+                padding: 7px
+                font-weight: 700

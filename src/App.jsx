@@ -1,14 +1,41 @@
 import React from "react";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+
 
 /*
     ! WARNING: Using the module: hot-loader creates warnings in console.  
 */
 import {hot} from "react-hot-loader";
+import "./app.sass";
+import Header from "./components/Header"
+import Home from "./components/pages/Home"
+import Profile from "./components/pages/Profile"
+import Login from "./components/pages/Access/Login"
 
 function App () {
-    return <div>
-        
-    </div>
+
+
+    
+    return <Router>
+        <Header />
+        <Switch>
+            <Route exact path="/profile">
+                <Profile />
+            </Route>
+            <Route path="/login">
+                <Login />
+            </Route>
+            <Route path="/">
+                <Home />
+            </Route>
+
+        </Switch>
+    </Router>
 }
 
 export default hot(module)(App);

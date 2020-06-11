@@ -1,0 +1,22 @@
+@mixin for-phone
+    @media (max-width: 768px) 
+        @content
+
+* 
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    height: 100%
+
+body
+    font-family: sans-serif
+    height: 100%
+    overflow-x: hidden
+    -webkit-overflow-scrolling: touch
+
+    @include for-phone
+        overflow-x: hidden
+    #root
+        height: 100%

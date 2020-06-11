@@ -12,7 +12,9 @@ module.exports = {
         contentBase: path.join(__dirname, "public/"),
         port: 3000,
         publicPath: "http://localhost:3000/dist/",
-        hotOnly: true
+        hotOnly: true,
+        // Acceso desde la lan
+        host: '0.0.0.0'
     },
     module: {
         rules: [
@@ -29,7 +31,13 @@ module.exports = {
                     "css-loader",
                     "sass-loader"
                 ]
-            }
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader',
+                ],
+            },
         ]
     },
     resolve: { extensions: ["*", ".js", ".jsx"] },
