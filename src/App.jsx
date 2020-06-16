@@ -12,28 +12,20 @@ import {
 */
 import {hot} from "react-hot-loader";
 import "./app.sass";
-import Header from "./components/Header"
+import Header from "./components/Shared/Header"
 import Home from "./components/pages/Home"
 import Profile from "./components/pages/Profile"
-import Login from "./components/pages/Access/Login"
+import Login from "./components/pages/Access"
 
 function App () {
-
-
     
     return <Router>
         <Header />
         <Switch>
-            <Route exact path="/profile">
-                <Profile />
-            </Route>
-            <Route path="/login">
-                <Login />
-            </Route>
-            <Route path="/">
-                <Home />
-            </Route>
-
+            <Route exact path="/profile" component={ Profile } />
+            <Route exact path="/login" component={ Login } />
+            <Route exact path="/" component={ Home } />
+            {/* <Route component={ 404 } /> */}
         </Switch>
     </Router>
 }

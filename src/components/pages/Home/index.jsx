@@ -4,7 +4,7 @@ import "./home.sass";
 
 const Home = () => {
     return (
-        <main>
+        <main className="main-home">
             <div className="parallax-img">
                 {/* <div className="parallax-text">
                     <span className="border">
