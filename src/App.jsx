@@ -15,16 +15,16 @@ import "./app.sass";
 import Header from "./components/Shared/Header"
 import Home from "./components/pages/Home"
 import Profile from "./components/pages/Profile"
-import Login from "./components/pages/Access"
+import Access from "./components/pages/Access"
 
 function App () {
     
     return <Router>
         <Header />
         <Switch>
-            <Route exact path="/profile" component={ Profile } />
-            <Route exact path="/login" component={ Login } />
             <Route exact path="/" component={ Home } />
+            <Route exact path="/profile" component={ Profile } />
+            <Route exact path="/login" component={ Access } />
             {/* <Route component={ 404 } /> */}
         </Switch>
     </Router>

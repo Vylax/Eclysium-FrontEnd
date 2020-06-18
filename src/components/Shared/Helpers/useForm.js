@@ -15,13 +15,12 @@ const useForm = (callback, validate) => {
   // const [isSubmittingSignup, setIsSubmittingSignup] = useState(false)
 
   // Enables the callback if there are no errors and form is submitted
-  //! Algo falta
   useEffect(() => {
-    if (Object.keys(loginErrors).length === 0 && isSubmittingLogin) callback();
+    if (Object.keys(loginErrors).length === 0 && isSubmittingLogin) callback(loginValues);
   }, [loginErrors]);
 
   useEffect(() => {
-    if (Object.keys(signupErrors).length === 0 && isSubmittingLogin) callback();
+    if (Object.keys(signupErrors).length === 0 && isSubmittingLogin) callback(signupValues);
   }, [signupErrors]);
 
   // 
