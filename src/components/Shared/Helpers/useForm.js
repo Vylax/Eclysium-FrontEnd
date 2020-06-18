@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const useForm = (callback, validate) => {
 
-
+  //! Según el tito ilu se puede acortar, creo que está delirando
   //Login control variables
   const [loginValues, setLoginValues] = useState({})
   const [loginErrors, setLoginErrors] = useState({})
