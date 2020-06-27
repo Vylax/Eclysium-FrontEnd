@@ -1,5 +1,5 @@
 export default function validateSignup(values) {
-    let errors = {}
+    let errors = {};
 
     if (!values.newAlias) {
         errors.newAlias = 'Alias is required'; 
