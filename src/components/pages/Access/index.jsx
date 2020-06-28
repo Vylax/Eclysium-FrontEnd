@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import * as axios from "axios";
 
 import Login from "./Login";
 import Signup from "./Signup";
@@ -15,8 +15,7 @@ const Access = () => {
             const verifiedUser = await axios.post("http://localhost:3001/api/users/login", {
                 email: loginResult.email,
                 pwd: loginResult.password
-            }, { headers: {'token': "" } });
-            console.log(verifiedUser);
+            });
             
         } catch (error) {
             console.log(error);
