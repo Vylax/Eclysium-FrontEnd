@@ -8,20 +8,6 @@ import "./access.sass";
 
 const Access = () => {
 
-    //Triggered if the login form is submitted without errors
-    async function loginCallback(loginResult) {
-
-        try {
-            const verifiedUser = await axios.post("http://localhost:3001/api/users/login", {
-                email: loginResult.email,
-                pwd: loginResult.password
-            });
-            
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
     //Triggered if the sign up form is submitted without errors
     async function signupCallback(signupResult) {
 
@@ -55,7 +41,7 @@ const Access = () => {
     return (
         <main className="main-login">
             <div className="form-container">
-                <Login callback={loginCallback} />
+                <Login/>
                 <Signup callback={signupCallback} />
             </div>
         </main>
