@@ -4,7 +4,7 @@ import * as axios from "axios";
 import styled from "styled-components";
 import Cookies from 'js-cookie'
 
-import { Button, IconButton, Link, Collapse } from '@material-ui/core';
+import { Button, IconButton, Link, Collapse, Typography, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { AccountCircle, Close } from '@material-ui/icons';
 import { Alert, AlertTitle } from '@material-ui/lab';
@@ -34,32 +34,10 @@ const ErrorAlert = styled(Alert)`
     color: rgb(97, 26, 21);
 `;
 
-const StyledAccountCircle = styled(AccountCircle)`
-    font-size: 140px;
-    color: #179df7;
-`;
-
 const ForgotPasswordContainer = styled.div`
     text-align: end;
     padding: 7px 0px;
 `;
-
-const ForgotPassword = styled(Link)`
-    color: #179df7
-`;
-
-const SubmitButton = styled(Button)`
-    margin: 5px 0px;
-    background-color: #179df7;
-    color: #eee;
-    font-weight: 600;
-    font-size: 0.875rem;
-    line-height: 1.75;
-    &:hover {
-        background-color: #179df7;
-    }
-`;
-
 
 const Login = (props) => {
     // const { callback } = props;
@@ -90,7 +68,7 @@ const Login = (props) => {
 
     return (
         <div className="login-container">
-            <StyledAccountCircle />
+            <AccountCircle color="primary" style={{ fontSize: 140 }} />
 
             {/* Error login alert */}
             <Collapse in={loginAlertVisibility}>
@@ -130,12 +108,12 @@ const Login = (props) => {
                 <hr style={{ margin: "5px 0px" }} />
 
                 <ForgotPasswordContainer>
-                    <ForgotPassword href="/">Forgot Password?</ForgotPassword>
+                    <Link color="primary" href="/">Forgot Password?</Link>
                 </ForgotPasswordContainer>
 
-                <SubmitButton type="submit" variant="contained" fullWidth>
-                    Log in
-                </SubmitButton>
+                <Button color="primary" type="submit" variant="contained" fullWidth>
+                    <Typography variant="button"><Box lineHeight={2} letterSpacing={2} fontWeight="700">Log in</Box></Typography>
+                </Button>
             </form>
         </div>
     );

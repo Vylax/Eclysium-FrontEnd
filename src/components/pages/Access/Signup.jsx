@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components";
 
-import { Button } from '@material-ui/core';
+import { Button, Typography, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -80,9 +80,9 @@ const Signup = (props) => {
                         toggleHandler={handleClickShowSignupPassword}
                     />
                     <hr style={{margin: "5px 0px 15px"}} />
-                    <SubmitButton type="submit" variant="contained" fullWidth>
-                        Sign up
-                    </SubmitButton>
+                    <Button color="primary" type="submit" variant="contained" fullWidth>
+                    <Typography variant="button"><Box lineHeight={2} letterSpacing={2} fontWeight="700">Sign Up</Box></Typography>
+                    </Button>
                 </form>
 
             </div>
