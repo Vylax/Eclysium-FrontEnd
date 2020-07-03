@@ -20,6 +20,7 @@ function App() {
 
     return <Router>
         <Header />
+        <div style={{ marginTop: "8vh", width: "100vw" }}></div>
         <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/profile" component={Profile} />
