@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import * as axios from "axios";
 import styled from "styled-components";
@@ -47,6 +47,7 @@ const Login = (props) => {
     // Hooks
     const history = useHistory();
     const [loginAlertVisibility, setLoginAlertVisibility] = useState(false);
+    const [loginAlertMessage, setLoginAlertMessage] = useState('');
     const { loginValues, loginErrors, showLoginPassword, handleClickShowLoginPassword, handleLoginChange, handleLoginSubmit } = useForm(loginCallback, validateLogin);
 
     //Triggered if the login form is submitted without errors
@@ -60,8 +61,8 @@ const Login = (props) => {
             Cookies.set('access-token', verifiedUser.headers.authorization, { expires: new Date(new Date().getTime() + (3600 * 1000)) });
             history.push("/profile");
 
-        } catch (error) {
-            console.log(error);
+        } catch (err) {
+            setLoginAlertMessage(err.response.data)
             setLoginAlertVisibility(true);
         }
     };
@@ -78,7 +79,7 @@ const Login = (props) => {
                     </IconButton>
                 } severity="error">
                     <AlertTitle><strong>Error</strong></AlertTitle>
-                    Incorrect email and/or password
+                    { loginAlertMessage }
                 </ErrorAlert>
             </Collapse>
 

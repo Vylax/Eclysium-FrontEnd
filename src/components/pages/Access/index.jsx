@@ -12,11 +12,16 @@ const Access = () => {
     async function signupCallback(signupResult) {
 
         try {
+
+            const { newAlias, newEmail, newPassword } = signupResult;
+
             const newUser = await axios.post("http://localhost:3001/api/users/", {
-                name: signupResult.newAlias,
-                email: signupResult.newEmail,
-                pwd: signupResult.newPassword
+                name: newAlias,
+                email: newEmail,
+                pwd: newPassword
             });
+
+            console.log(newUser)
 
         } catch (error) {
             if (error.response) {
@@ -25,7 +30,7 @@ const Access = () => {
                  * status code that falls out of the range of 2xx
                  */
                 console.log(error.response.data);
-                console.log(error.response.status);
+                console.log(error.response);
                 console.log(error.response.headers);
             } else if (error.request) {
                 // The request was made but no response was received.
