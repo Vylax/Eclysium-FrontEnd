@@ -10,6 +10,9 @@ let theme = createMuiTheme({
         button: {
             color: "#eee"
         },
+        h1: {
+            fontSize: 32
+        },
         h6: {
             fontSize: 16,
             fontWeight: 700
