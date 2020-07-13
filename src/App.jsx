@@ -4,22 +4,22 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-
-
 /*
     ! WARNING: Using the module: hot-loader creates warnings in console.  
 */
 import { hot } from "react-hot-loader";
 import "./app.sass";
-import Header from "./components/Shared/Header"
+// import Header from "./components/Shared/Header"
 import Home from "./components/pages/Home"
 import Profile from "./components/pages/Profile"
 import Access from "./components/pages/Access"
+import Navbar from "./components/Shared/Navbar";
 
 function App() {
 
     return <Router>
-        <Header />
+        <Navbar />
+        {/* <Header /> */}
         <div style={{ marginTop: "8vh", width: "100vw" }}></div>
         <Switch>
             <Route exact path="/" component={Home} />
