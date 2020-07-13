@@ -1,4 +1,5 @@
 import React, { useEffect, useState, createRef } from "react";
+import { Link } from "react-router-dom";
 import { Typography, Box } from "@material-ui/core";
 import DropdownMenu from "./DropdownMenu";
 import NavItem from "./NavItem";
@@ -39,14 +40,16 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <Typography component="div" className="title" style={{ color: "#eee" }}>
-                <Box fontWeight={700} fontSize="2rem" m={1} letterSpacing={3} >Eclysium</Box>
+                <Box fontWeight={700} fontSize="2rem" m={1} letterSpacing={3} >
+                    <Link to="/">Eclysium</Link>
+                </Box>
             </Typography>
             <ul className="navbar-nav">
                 <NavItem icon={<PlusIcon />} />
                 {/* <NavItem icon={<BellIcon />} />
                 <NavItem icon={<MessengerIcon />} /> */}
                 <NavItem icon={<OptionsIcon style={displayed ? { transform: "rotate(-90deg)" } : {}} />} displayed={displayed} setDisplayed={setDisplayed} ref={ref}>
-                    <DropdownMenu />
+                    <DropdownMenu displayHandler={setDisplayed}  />
                 </NavItem>
             </ul>
         </nav>

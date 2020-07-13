@@ -27,10 +27,9 @@ const Profile = () => {
             history.push(historyRoutes.LOGIN);
         }
     }
-    //Falta reparar el array.length
+    
     useEffect(() => {
         if (!Cookies.get("access-token")) history.push(historyRoutes.LOGIN);
-        { console.log("111") }
         getData();
     }, []);
 
