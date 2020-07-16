@@ -1,12 +1,13 @@
 import React, { forwardRef } from "react";
+import { Link } from "react-router-dom";
 
-const NavItem = forwardRef(({ icon, children, setDisplayed, displayed }, ref) => {
+const NavItem = forwardRef(({ icon, children, setDisplayed, displayed, to = "#" }, ref) => {
 
     return (
         <li className="nav-item" ref={ref}>
-            <a href="#" className="icon-button" onClick={() => { setDisplayed(!displayed) }}>
+            <Link to={to} className="icon-button" onClick={() => setDisplayed && setDisplayed(!displayed) }>
                 {icon}
-            </a>
+            </Link>
             {displayed && children}
         </li>
     );
