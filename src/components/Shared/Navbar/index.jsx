@@ -45,7 +45,7 @@ const Navbar = () => {
                 </Box>
             </Typography>
             <ul className="navbar-nav">
-                <NavItem icon={<PlusIcon />} />
+                <NavItem icon={<PlusIcon />} to="/library"/>
                 {/* <NavItem icon={<BellIcon />} />
                 <NavItem icon={<MessengerIcon />} /> */}
                 <NavItem icon={<OptionsIcon style={displayed ? { transform: "rotate(-90deg)" } : {}} />} displayed={displayed} setDisplayed={setDisplayed} ref={ref}>
