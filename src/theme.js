@@ -11,7 +11,11 @@ let theme = createMuiTheme({
             color: "#eee"
         },
         h1: {
-            fontSize: 32
+            fontSize: 30
+        },
+        h2: {
+            fontSize: 20,
+            fontWeight: 600
         },
         h6: {
             fontSize: 16,
